@@ -1,0 +1,55 @@
+# Project: Projet1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Projet_LMI.o abr.o agregations.o liste_chainee.o tableau_dynamique.o tableau_statistique.o tas.o tri.o persistance.o benchmark.o
+LINKOBJ  = Projet_LMI.o abr.o agregations.o liste_chainee.o tableau_dynamique.o tableau_statistique.o tas.o tri.o persistance.o benchmark.o
+LIBS     = -static-libgcc
+INCS     = 
+CXXINCS  = 
+BIN      = Projet_LMI.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Projet_LMI.o: Projet_LMI.c
+	$(CC) -c Projet_LMI.c -o Projet_LMI.o $(CFLAGS)
+
+abr.o: abr.c
+	$(CC) -c abr.c -o abr.o $(CFLAGS)
+
+agregations.o: agregations.c
+	$(CC) -c agregations.c -o agregations.o $(CFLAGS)
+
+liste_chainee.o: liste_chainee.c
+	$(CC) -c liste_chainee.c -o liste_chainee.o $(CFLAGS)
+
+tableau_dynamique.o: tableau_dynamique.c
+	$(CC) -c tableau_dynamique.c -o tableau_dynamique.o $(CFLAGS)
+
+tableau_statistique.o: tableau_statistique.c
+	$(CC) -c tableau_statistique.c -o tableau_statistique.o $(CFLAGS)
+
+tas.o: tas.c
+	$(CC) -c tas.c -o tas.o $(CFLAGS)
+
+tri.o: tri.c
+	$(CC) -c tri.c -o tri.o $(CFLAGS)
+
+persistance.o: persistance.c
+	$(CC) -c persistance.c -o persistance.o $(CFLAGS)
+
+benchmark.o: benchmark.c
+	$(CC) -c benchmark.c -o benchmark.o $(CFLAGS)
