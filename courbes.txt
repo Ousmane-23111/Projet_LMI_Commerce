@@ -1,0 +1,46 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Tailles de données testées
+tailles = [100, 1000, 10000]
+
+# Vraies valeurs mesurées
+tab_statique  = [0, 0, 1]
+tab_dynamique = [0, 1, 18]
+liste_chainee = [1, 1, 20]
+abr           = [0, 20, 2638]
+tas           = [0, 0, 1]
+
+# ===== COURBE 1 : Echelle lineaire =====
+plt.figure(figsize=(10, 6))
+plt.plot(tailles, tab_statique,  'b-o', label='Tableau statique')
+plt.plot(tailles, tab_dynamique, 'r-o', label='Tableau dynamique')
+plt.plot(tailles, liste_chainee, 'g-o', label='Liste chainee')
+plt.plot(tailles, abr,           'm-o', label='ABR')
+plt.plot(tailles, tas,           'y-o', label='Tas binaire')
+plt.xlabel('Nombre de produits (n)')
+plt.ylabel('Temps (ms)')
+plt.title('Temps insertion en fonction de n')
+plt.legend()
+plt.grid(True)
+plt.savefig('courbe_insertion.png')
+plt.show()
+
+# ===== COURBE 2 : Echelle logarithmique =====
+plt.figure(figsize=(10, 6))
+plt.plot(tailles, tab_statique,  'b-o', label='Tableau statique')
+plt.plot(tailles, tab_dynamique, 'r-o', label='Tableau dynamique')
+plt.plot(tailles, liste_chainee, 'g-o', label='Liste chainee')
+plt.plot(tailles, abr,           'm-o', label='ABR')
+plt.plot(tailles, tas,           'y-o', label='Tas binaire')
+plt.xscale('log')
+plt.yscale('log')
+plt.xlabel('Nombre de produits (n)')
+plt.ylabel('Temps (ms)')
+plt.title('Temps insertion - Echelle logarithmique')
+plt.legend()
+plt.grid(True)
+plt.savefig('courbe_insertion_log.png')
+plt.show()
+
+print("Courbes generees avec succes !")
