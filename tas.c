@@ -61,7 +61,6 @@ void tas_inserer(Tas *t, Produit *p)
     t->produits[t->taille] = p;
     t->taille++;
     monter(t, t->taille - 1);
-    printf("Inséré : %s (%.2f)\n", p->nom, p->prix);
 }
 
 /* Extraire le maximum (produit le plus cher) */

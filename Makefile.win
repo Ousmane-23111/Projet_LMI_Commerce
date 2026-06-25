@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = abr.o agregations.o benchmark.o liste_chainee.o persistance.o Projet_LMI.o tableau_dynamique.o tableau_statistique.o tas.o tri.o
-LINKOBJ  = abr.o agregations.o benchmark.o liste_chainee.o persistance.o Projet_LMI.o tableau_dynamique.o tableau_statistique.o tas.o tri.o
+OBJ      = abr.o agregations.o benchmark.o liste_chainee.o persistance.o tableau_dynamique.o tableau_statistique.o tas.o tri.o Projet_LMI.o
+LINKOBJ  = abr.o agregations.o benchmark.o liste_chainee.o persistance.o tableau_dynamique.o tableau_statistique.o tas.o tri.o Projet_LMI.o
 LIBS     = -static-libgcc
 INCS     = 
 CXXINCS  = 
@@ -39,9 +39,6 @@ liste_chainee.o: liste_chainee.c
 persistance.o: persistance.c
 	$(CC) -c persistance.c -o persistance.o $(CFLAGS)
 
-Projet_LMI.o: Projet_LMI.c
-	$(CC) -c Projet_LMI.c -o Projet_LMI.o $(CFLAGS)
-
 tableau_dynamique.o: tableau_dynamique.c
 	$(CC) -c tableau_dynamique.c -o tableau_dynamique.o $(CFLAGS)
 
@@ -53,3 +50,6 @@ tas.o: tas.c
 
 tri.o: tri.c
 	$(CC) -c tri.c -o tri.o $(CFLAGS)
+
+Projet_LMI.o: Projet_LMI.c
+	$(CC) -c Projet_LMI.c -o Projet_LMI.o $(CFLAGS)

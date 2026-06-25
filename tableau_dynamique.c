@@ -27,7 +27,6 @@ int td_inserer(TableauDynamique *td, Produit *p)
             printf("Erreur realloc !\n");
             exit(1);
         }
-        printf("Capacité doublée : %d\n", td->capacite);
     }
     td->produits[td->nb_produits] = p;
     td->nb_produits++;
